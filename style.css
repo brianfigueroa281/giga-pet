@@ -1,0 +1,160 @@
+/* base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 25px;
+  background-color: #f3f1ea;
+}
+
+main {
+  display: block;
+  overflow: hidden;
+}
+
+header {
+  border-bottom: 2px solid #5a4632;
+}
+
+h1 {
+  font-weight: bold;
+  color: #3b2e20;
+}
+
+h3 {
+  margin: 25px 0 8px;
+  color: #3b2e20;
+}
+
+/* pet image + speech bubble */
+.pet-image-container {
+  float: left;
+  padding: 10px;
+  padding-top: 90px;
+  position: relative;
+}
+
+.pet-image {
+  height: 280px;
+  border-radius: 14px;
+  border: 4px solid #5a4632;
+  cursor: pointer;
+  position: relative; /* so .animate() can move it */
+  top: 0;
+  left: 0;
+  transition: filter 0.4s;
+}
+
+.pet-image.sad {
+  filter: grayscale(100%);
+}
+
+/* dance from double-clicking */
+.pet-image.dancing {
+  animation: dance 0.3s ease-in-out 4;
+}
+
+@keyframes dance {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(-8deg) scale(1.05); }
+  75%  { transform: rotate(8deg) scale(1.05); }
+  100% { transform: rotate(0deg); }
+}
+
+.hint {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: #7a6a58;
+  font-style: italic;
+}
+
+.speech-bubble {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  max-width: 300px;
+  padding: 10px 14px;
+  background: #fff;
+  border: 2px solid #5a4632;
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.groot-line {
+  display: block;
+  font-size: 17px;
+  font-weight: bold;
+  color: #3b2e20;
+}
+
+.translation {
+  display: block;
+  font-size: 13px;
+  color: #6b7d3a;
+  margin-top: 3px;
+}
+
+/* bubble tail */
+.speech-bubble:after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 40px;
+  border-width: 12px 10px 0;
+  border-style: solid;
+  border-color: #5a4632 transparent transparent;
+}
+
+/* dashboard */
+.dashboard {
+  float: left;
+  padding: 20px;
+  padding-top: 100px;
+  min-width: 360px;
+}
+
+.dashboard div {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.button-container {
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.button-container button {
+  width: 100px;
+  margin-right: 10px;
+  padding: 8px 0;
+  text-align: center;
+  display: inline-block;
+  float: left;
+  font-size: 15px;
+  background-color: #5a4632;
+  border: 1px solid #3b2e20;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fafafa;
+}
+
+.button-container button:hover {
+  background-color: #6b7d3a;
+}
+
+/* activity log */
+.log {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  color: #4a3c2c;
+}
+
+.log li {
+  padding: 4px 0;
+  border-bottom: 1px dashed #c9bda9;
+}
